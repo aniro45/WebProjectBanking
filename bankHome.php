@@ -20,7 +20,7 @@
         	<img class="logo-img1" src="bank_logo1.png" onclick="window.location.href = 'bankHome.php'" width="120" height="125">
         </div>
 
-         <h2 class="header-heading">STATE BANK OF NANDURG</h2>
+         <h2 class="header-heading">STATE BANK OF NANDURGHAT</h2>
 
         <button class ="signin-btn" onclick="window.location.href = 'signin.php'">SIGN IN</button>
        
