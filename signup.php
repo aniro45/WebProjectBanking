@@ -29,6 +29,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
     if(empty($email) && empty($username) && empty($password) && empty($Cpassword)){
    
        echo "<h3>Fields can not be blank!</h3>";
+      
 
     }else if(empty($email) || empty($username)){
       
@@ -95,9 +96,21 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
  .success{
    
       font-size: 35px;
-      -webkit-text-stroke: 1px #0000ff;
-	-webkit-text-fill-color: #00ff00;
-  font-weight: bolder;
+      color:green;
+     font-weight: bolder;
+      padding-top: 11px;
+     padding-bottom: 11px;
+     padding-left: 15;
+     padding-right: 15px;
+     background-color: #c0c7d3; 
+     position: absolute;             
+     top: 79%;
+     left: 49.2%;
+     border-radius:10px;
+     
+
+  
+   
  }
 
 </style>
