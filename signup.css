@@ -1,0 +1,145 @@
+  
+    .alrdAcc{
+
+    font-size: 16.5px;
+      position: absolute;
+      top: 92.5%;
+      margin-left: 50%;
+      margin-right: 1px;
+      text-decoration:none;
+
+    }
+
+    .alrdAcc:hover{
+
+      color: red;
+    }
+
+
+    .main-head{
+      font-family: Arial;
+      color: black;
+      position:absolute;
+      top: 9%;
+      text-shadow: 1px 2px black;
+      font-weight: bolder;
+     -webkit-text-stroke: 1px black;
+	   -webkit-text-fill-color: red; 
+
+    }
+
+       .main-head:hover{
+
+         position: absolute;
+         text-shadow: 3px 3px white;
+         cursor: default;
+         font-family: cursive;
+
+       }
+
+      .signup-head{
+
+      	margin-left: 29%;
+      	margin-top: 10%;
+      	-webkit-text-stroke: 1px black;
+	-webkit-text-fill-color: #33ff33;
+      }
+    	
+     form{
+
+         margin-left: 18%;
+         margin-top: 7%;
+     }
+
+     input{
+
+     	 color: black;
+     	 font-family: Arial;
+         box-sizing: border-box;
+         border-radius: 12px;
+     	border: 1px solid black;
+     	height:35px;
+     	width:230px;
+        padding-left: 8px;
+
+
+     }
+
+     input:focus{
+
+     	   border-radius: 7px;
+     	   border: 1px solid red;
+     	  height:32px;
+     	  border-radius: 5px;
+
+     }
+
+     input:hover{
+
+        border: 1.5px solid #cc66ff;
+        height:32px;
+
+     }
+
+     body{
+       
+     	
+     	background-image: url("main_banner.jpg"); 
+          background-repeat: no-repeat;
+          background-size: 1570px 790px;
+     	background-color:#b3ffb3;
+     }
+
+
+
+     .main-layout{
+       
+
+        border: 3px solid #d6d6c2;
+       width: 355px;
+         height: 365px;
+       background-color: #ccfff3;
+       box-shadow: 3px 6px #d6d6c2;
+        border-radius: 15px;
+       position: absolute;
+      top: 26%;
+       left: 37%;
+       
+       
+     }
+
+     .submit-btn{
+         
+         font-family: Arial;
+         font-weight: bold;
+         margin-left:27%;
+         height:26px;
+     	 width:75px;
+     	 border-radius: 2px;
+     	 box-shadow: 1.5px 2.4px black;
+        }
+
+       .submit-btn:hover{
+         
+        margin-left:27%;
+         height:26px;
+     	 width:75px;
+     	 background-color: #00ff00; 
+     	 border-color: black;
+     	 border: 1px solid black;
+     	 
+
+       } 
+
+       .submit-btn:focus{
+
+        height:24px;
+     	 width:73px;
+     	 border-radius: 2px;
+     	 box-shadow: 0px 0px black;
+         
+       }
+
+
+
+    </style>
