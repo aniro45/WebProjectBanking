@@ -1,5 +1,6 @@
 body{
 
+   
 }
 
 .side-col{
@@ -18,7 +19,6 @@ body{
    display: block;
    text-decoration-style: none;
    text-align: center;
-   vertical-align: center;
    position: absolute;
    top: 268px;
    left: -5.2%;

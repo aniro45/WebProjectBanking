@@ -30,7 +30,7 @@
            <div class="list">
               <ul>
                 <li onclick="window.location.href = 'profilePage.php'">PROFILE</li>
-                <li>STTINGS</li>
+                <li onclick = "window.location.href = 'settingPage.php'">STTINGS</li>
                 <li>SECURITY</li>
                 <li onclick="window.location.href = 'bankHome.php'">HOME</li>
               </ul>
