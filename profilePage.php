@@ -18,12 +18,12 @@
 
           $emailData = $data['email'];
           $usernameData = $data['username'];
-          $accountNo = $data['accountNo']; 
+          $accountNumber = $data['accountNo']; 
           $ifscCode = $const_data['IFSC']; 
 
           echo "<p class = 'test1'>$emailData</p>";
           echo "<p class = 'test2'>$usernameData</p>";
-          echo "<p class = 'test3'>$accountNo</p>";
+          echo "<p class = 'test3'>$accountNumber</p>";
           echo "<p class = 'test4'>$ifscCode</p>";
 
 
