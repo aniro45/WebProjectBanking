@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
 echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
 
-   $PORT_DB = "localhost:3307";
+   $PORT_DB = "localhost:3307";  
    $USERNAME_DB = "root";
    $PASS_DB= "";
    $NAME_DB = "banking_db"; 
