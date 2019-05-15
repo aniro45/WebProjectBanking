@@ -79,7 +79,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 <html>
 <head>
 	<title>State Bank of Nandurghat</title>
-    
+     
     <link rel="stylesheet" type="text/css" href="signin.css">
    <link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>
 

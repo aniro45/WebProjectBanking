@@ -1,12 +1,16 @@
 
+.main-layout{
+
+
+}
 
 .side-col{
   
    display: block;
    background-color: #E2E2E2;
-    height: 750px;
+    height: 753px;
     width: 400px;
-    margin-top: -7px;
+    margin-top: -55px;
     margin-left: -7px;
    
  
@@ -66,12 +70,15 @@
  
  .name-col{
        
-       font-size: 35px;
+       font-size: 22px;
        font-family: Arial;
        font-weight: bold;
-      position: absolute;
-      top: 126px;
-      left: 83px;
+      /* position: absolute;
+      top: 135px;
+      left: 85px; */
+      text-align: center;
+      vertical-align: middle;
+      line-height: 500px;
  }
  
  .head-img{

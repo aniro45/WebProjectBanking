@@ -1,9 +1,11 @@
 <?php
      
      session_start();
- 
-     $tempEmail =  $_SESSION['email'];
+   $tempEmail =  $_SESSION['email'];
 
+  if(isset($tempEmail)){
+
+    
    $connection = mysqli_connect("localhost:3307", "root", "", "banking_db");
   
     $select_query = "SELECT * FROM bank_details WHERE email = '$tempEmail'";
@@ -21,11 +23,18 @@
           $accountNumber = $data['accountNo']; 
           $ifscCode = $const_data['IFSC']; 
 
-          echo "<p class = 'test1'>$emailData</p>";
-          echo "<p class = 'test2'>$usernameData</p>";
-          echo "<p class = 'test3'>$accountNumber</p>";
-          echo "<p class = 'test4'>$ifscCode</p>";
+          echo "<p class = 'test1'>$usernameData</p>";
+          echo "<p class = 'test2'>$emailData</p>";
+          echo "<p class = 'test3'>$ifscCode</p>";
+          echo "<p class = 'test4'>$accountNumber</p>";
+          
+  }
 
+  else{
+
+        header("Location: signin.php");
+
+  }
 
 ?>
 
@@ -35,26 +44,24 @@
 
   color:red;
   position:absolute;
-  top: 22.4%;
-  left: 44%;
+  top: 7.4%;
+  left: 45.3%;
 
 }
-
 .test2{
 
   color:red;
   position:absolute;
-  top: 7.4%;
+  top: 22.4%;
   left: 44%;
-
 }
 
 .test3{
 
-  color:red;
-  position:absolute;
-  top: 508.5px;
-  left: 48.3%; 
+color:red;
+position:absolute;
+top: 52.6%;
+left: 46%;
 
 }
 
@@ -62,10 +69,11 @@
 
   color:red;
   position:absolute;
-  top: 52.6%;
-  left: 46%;
-
+  top: 67.85%;
+  left: 48.3%; 
 }
+
+
 
 
 </style>
@@ -89,7 +97,7 @@
     <div class="side-col">
              
              <img class = "head-img" src="aniket_photo.jpg" alt="Avatar">
-             <h6  class="name-col">Aniket Jadhav</h6>
+             <h6  class="name-col">ANIKET JADHAV</h6>
 
            <div class="list">
               <ul>
@@ -105,7 +113,7 @@
       </div>
     
     <div class=info-field-attribute> 
-      <h6 class="info-field-1">Name:</h6>
+      <h6 class="info-field-1">Username:</h6>
       <h6 class="info-field-2">Email:</h6>
       <h6 class="info-field-3">Mobile:</h6>
       <h6 class="info-field-4">IFSC Code:</h6>

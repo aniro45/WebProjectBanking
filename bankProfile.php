@@ -22,8 +22,8 @@ if(!isset($_SESSION['email'])){
     
     color: red;
   	position: absolute;
-  	top:0.2%;
-  	left:34%;
+  	top:1%;
+  	left:36%;
   } 	
    
 
@@ -41,7 +41,6 @@ if(!isset($_SESSION['email'])){
 
 </head>
 <body>
-cd
  <div class="main">
 
     <div class="header">
