@@ -17,7 +17,13 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
     $username = $_POST['username'];
     $password = $_POST['pass'];
     $Cpassword = $_POST['cpass'];
+    $generatedAccNo = rand(11111111111,99999999999);
+    
 
+    $select_query = "SELECT * FROM bank_details";
+    $accCheckQuery = mysqli_query($connection, $select_query);
+    $arrayFetchQuery = mysqli_fetch_array($accCheckQuery);
+    $AccountNo = $arrayFetchQuery['accountNo']; 
 
    $select_query1 = "SELECT * FROM bank_details WHERE email = '$email'";
    $select_query2 = "SELECT * FROM bank_details WHERE username = '$username'";
@@ -28,7 +34,10 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     if(empty($email) && empty($username) && empty($password) && empty($Cpassword)){
    
-       echo "<h3>Fields can not be blank!</h3>";
+      // $generatedAccNo = rand(1111111111,9999999999);
+      //    echo "<h3>$generatedAccNo</h3>";
+      echo "<h3>Fields can not be blank!.</h3>";
+
       
 
     }else if(empty($email) || empty($username)){
@@ -57,22 +66,39 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
   
     }else if(mysqli_num_rows($query2) == true){
       
-           echo "<h3>Uername is alredy registered!</h3>";
+           echo "<h3>Username is alredy registered!</h3>";
 
-    }else{
+    }else if($generatedAccNo !== $AccountNo ){
 
-        $insert_query = "INSERT INTO bank_details (id, email, username, pass, date) values('', '$email', '$username', '$password', NOW() )";
+      $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
+       values('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
      
     
-     $query = mysqli_query($connection, $insert_query);
+       $query = mysqli_query($connection, $insert_query);
         
         echo '<script>alert("successfully Created an Account!");</script>';
         echo "<h3 class='success'>Succesfully Created an Account!</h3>";
-    } 
+   
+      }else{ 
+         
+         return;
+        
+    }
+         
+   //     $generatedAccNo = rand(1111111110,9999999999);
+       
+   //     echo "<h3>$generatedAccNo</h3>";
+   //     $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
+   //     values('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
 
-    
+   //      $query = mysqli_query($connection, $insert_query);
+   //      echo '<script>alert("successfully Created an Account!");</script>';
+
+   //    //   echo "<h3 class='success'>Succesfully Created an Account!</h3>";
+         
+
+   //  }
 }
-
  ?>
 
 <style type="text/css">

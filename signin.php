@@ -1,9 +1,11 @@
 
 <?php
 
+
 if(isset($_POST['submit'])){
       
 echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
+
 
    $PORT_DB = "localhost:3307";
    $USERNAME_DB = "root";
@@ -14,6 +16,8 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
          
     $email = $_POST['email'];
     $password = $_POST['pass'];
+
+    
 
     $insert_query = "SELECT * FROM bank_details WHERE email = '$email' and pass = '$password'";
 
@@ -31,7 +35,6 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
         session_start();
 
-
        $data = mysqli_fetch_array($query);
           $_SESSION['email'] = $data['email'];
 
@@ -44,6 +47,15 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 ?>
 
 <style type="text/css">
+
+.randTest{
+  font-size:30px;
+  color:white;
+  position:absolute;
+  top:50%;
+  left:50%;
+
+}
   
    h3{
 
