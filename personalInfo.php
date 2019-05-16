@@ -1,19 +1,19 @@
-
-
 <?php 
 
+  $fName = $_POST['Fname'];
+  $mName = $_POST['Mname'];
+  $lName = $_POST['Lname'];
+  $mobile = $_POST['mobile'];
+  $gender = $_POST['gender'];
+  $fName = $_POST['city'];
+  $fName = $_POST['age'];
+  $fName = $_POST['pincode'];
+  $profilePic = $_POST['profilePic'];
 
-
-
-
-
+      $connection = mysqli_connect("localhost:3307", "root", "", "banking_db") or die("Connection FAILED!");
+      
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@
          
          <div class="Form-Element">
         
-             <form action="personalForm.php" method = "POST">
+             <form action="personalInfo.php" method = "POST">
             
                  <div class= "testDiv">First Name: &nbsp; <input type="text" name="Fname"></div> 
                  <br>
@@ -48,7 +48,7 @@
                   <div class= "radioOption">
                      <input class = "radioM" type="radio" name="gender" value="male">Male
                  
-                     <input class = "radioF" type="radio" name="gender" value="female">female
+                     <input class = "radioF" type="radio" name="gender" value="female">Female
                  
                      <input class = "radioO" type="radio" name="gender" value="other">Other
                   </div>
@@ -57,12 +57,12 @@
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="city"></div>
                      <br>
                     <div class= "ageField">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="Age"></div>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="age"></div>
                      <br>
                       <div class= "pinField">PIN code:&nbsp;&nbsp;&nbsp;&nbsp;
                      &nbsp;<input type="number" name="pinCode"></div>
                   
-                     <div><p class="profile-name">Profle Picture: </p><input type="file" name="fileToUpload" id="fileToUpload"></div>
+                     <div><p class="profile-name">Profle Picture: </p><input type="file" name="profilePic" id="fileToUpload"></div>
 
                     <input type="submit" name="pincode" value="save">
 
