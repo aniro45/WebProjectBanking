@@ -82,7 +82,7 @@ body{
   
   } */
   
-  input[name=pinCode], input[name=Age]{
+  input[name=pinCode], input[name=age]{
     
     height: 25px;
     width: 150px;
