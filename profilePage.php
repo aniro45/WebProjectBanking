@@ -45,7 +45,7 @@
   color:red;
   position:absolute;
   top: 7.4%;
-  left: 44%;
+  left: 45%;
 
 }
 
@@ -105,7 +105,7 @@
       </div>
     
     <div class=info-field-attribute> 
-      <h6 class="info-field-1">Name:</h6>
+      <h6 class="info-field-1">Username:</h6>
       <h6 class="info-field-2">Email:</h6>
       <h6 class="info-field-3">Mobile:</h6>
       <h6 class="info-field-4">IFSC Code:</h6>

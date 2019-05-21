@@ -19,7 +19,8 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     
 
-    $insert_query = "SELECT * FROM bank_details WHERE email = '$email' and pass = '$password'";
+    $insert_query = "SELECT * FROM bank_details WHERE email = '$email' 
+      and pass = '$password'";
 
     $query = mysqli_query($connection, $insert_query);
 

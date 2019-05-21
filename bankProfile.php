@@ -41,7 +41,6 @@ if(!isset($_SESSION['email'])){
 
 </head>
 <body>
-cd
  <div class="main">
 
     <div class="header">

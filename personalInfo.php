@@ -14,36 +14,68 @@
     $pincode = $_POST['pinCode'];
 
     if(!isset($_POST['submit'])){
+
       $gender = $_POST['gender'];
 
-}
+   }
+
+   $fName = trim($fName);
+   $mName = trim($mName);
+   $lName = trim($lName);
+   $city = trim($city);
  
   $connection = mysqli_connect("localhost:3307", "root", "", "banking_db") or die("Connection FAILED!");
 
-       $mobile_check_query = "SELECT * FROM bank_deatils";
+     $mobile_check_query = "SELECT * FROM bank_deatils";
 
-       $query_mobile = mysqli_query($connection, $mobile_check_query);
+     $query_mobile = mysqli_query($connection, $mobile_check_query);
 
-      if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)||empty($gender)){
+           
+     $mobile_string = strlen((string) $mobile);
+     $pincode_string = strlen((string) $pincode); 
 
-        echo "<h3 class = 'warning-msg'>Fileds can Not be Empty!</h3>";
 
-    }else if(strlen($mobile != 10)){
-          
-        "<h3 class = 'warning-msg'>Recheck your phone number!</h3>";
-      
-    }else if(mysqli_num_rows($query_mobile) == true){
-   
-        echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
-      
-      }else if($age > 99){
+           
+            
+   if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)){
 
-        echo "<h3 class = 'warning-msg'>Are you Captain America?</h3>";
-
-      }else if(strlen($pincode != 6)){
+     echo "<h3 class = 'warning-msg'>Fileds can Not be Empty!</h3>";
     
-        "<h3 class = 'warning-msg'>pincode has to be of 6 characters only!</h3>";       
-      }
+
+   }if($mobile_string != 10){
+          
+     echo "<h3 class = 'warning-msg'>Recheck your phone number!</h3>";
+             
+   }else if(strlen($pincode_string != 6)){
+    
+     echo "<h3 class = 'warning-msg'>pincode has to be of 6 characters only!</h3>";       
+             
+   }else if($age > 99){
+
+     echo "<h3 class = 'warning-msg'>Are you the Captain America?</h3>";
+            
+   }else if(mysqli_num_rows($query_mobile) == true){
+   
+     echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
+      
+   } else{
+
+        $insert_query = "INSERT INTO `bank_details`(`id`, `Fname`, `Mname`, `Lname`, `mobile`, `gender`, `city`, `age`, 
+        `pincode`, `profilePic`, `isInfoSubmit`, `date`) VALUES ('', '$fName', '$mName', '$lName', 
+        '$mobile_string', 'gender', '$city_string', '$age')";
+
+   }
+
+   }
+
+   
+
+       
+
+   
+
+            
+      
 
 
 
@@ -67,7 +99,7 @@
 //       $data = mysqli_fetch_array($query2);
 
 //          echo "<img src='upload_images/".$data['image']."'>";
-    }
+    
 ?>
 
 <style>
@@ -143,7 +175,8 @@
           </div>
          <div class="Notice-Board">
              <h4 class = "note">NOTICE</h4>
-             <p class = "warning-para"><span>*</span>All the fields except 'profile picture' are mandatory. Please fill out all the fields to proceed further.</p>
+             <p class = "warning-para"><span>*</span>All the fields except 
+             'profile picture' are mandatory. Please fill out all the fields to proceed further.</p>
            
          </div> 
 
