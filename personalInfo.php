@@ -3,46 +3,64 @@
   session_start();
    $tempEmail = $_SESSION['email'];
 
+   $connection = mysqli_connect("localhost:3307", "root", "", "banking_db") or die("Connection FAILED!");
+   $activation_query = mysqli_query($connection, "SELECT * FROM bank_details WHERE email = '$tempEmail'");
+       $activation_fetch_query = mysqli_fetch_array($activation_query);
+       $activation_key = $activation_fetch_query['isInfoSubmit'];
+
+   if(!isset($tempEmail)){
+
+       header("Location: signin.php");
+
+   }else if($activation_key == 1){
+
+             header("Location: bankProfile.php");
+       
+   }else{
+
  if(isset($_POST['submit'])) {
     $fName = $_POST['Fname'];
     $mName = $_POST['Mname'];
     $lName = $_POST['Lname'];
     $mobile = $_POST['mobile'];
-    
     $city = $_POST['city'];
     $age = $_POST['age'];
     $pincode = $_POST['pinCode'];
-
-    if(!isset($_POST['submit'])){
-
-      $gender = $_POST['gender'];
-
-   }
+    $gender = $_POST['gender'];
+    $profilePic = $_FILES['image']['tmp_name'];
+ 
+    $isPageActive = 0;
 
    $fName = trim($fName);
    $mName = trim($mName);
    $lName = trim($lName);
    $city = trim($city);
+
  
   $connection = mysqli_connect("localhost:3307", "root", "", "banking_db") or die("Connection FAILED!");
+    
+  $fileName = $_FILES['image']['name'];  
+  $fileTmpName = $_FILES['image']['tmp_name']; 
+  $folder = 'upload_images/';
+
+  
+
+
+   $mobile_string = strlen((string) $mobile);
+   $pincode_string = strlen((string) $pincode); 
 
      $mobile_check_query = "SELECT * FROM bank_deatils";
 
      $query_mobile = mysqli_query($connection, $mobile_check_query);
-
-           
-     $mobile_string = strlen((string) $mobile);
-     $pincode_string = strlen((string) $pincode); 
-
-
-           
+      
+          
             
-   if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)){
+   if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)|| empty($gender)){
 
      echo "<h3 class = 'warning-msg'>Fileds can Not be Empty!</h3>";
     
 
-   }if($mobile_string != 10){
+   }else if($mobile_string != 10){
           
      echo "<h3 class = 'warning-msg'>Recheck your phone number!</h3>";
              
@@ -50,33 +68,33 @@
     
      echo "<h3 class = 'warning-msg'>pincode has to be of 6 characters only!</h3>";       
              
-   }else if($age > 99){
+   }else if($age > 99 || $age<10){
 
      echo "<h3 class = 'warning-msg'>Are you the Captain America?</h3>";
-            
-   }else if(mysqli_num_rows($query_mobile) == true){
+   }        
+  //   }else if($query_mobile || mysqli_num_rows($query_mobile) == false){
    
-     echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
+  //    echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
       
-   } else{
+    else{
 
-        $insert_query = "INSERT INTO `bank_details`(`id`, `Fname`, `Mname`, `Lname`, `mobile`, `gender`, `city`, `age`, 
-        `pincode`, `profilePic`, `isInfoSubmit`, `date`) VALUES ('', '$fName', '$mName', '$lName', 
-        '$mobile_string', 'gender', '$city_string', '$age')";
-
-   }
-
-   }
-
-   
-
+        $isInfoSubmit = 1;
+     $insert_query = " UPDATE `bank_details` SET Fname = '$fName', Mname='$mName', Lname= '$lName', mobile='$mobile', 
+     gender = '$gender', city= 'city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
        
+       move_uploaded_file($fileTmpName, $folder.$fileName);
+     $insert_profile_pic = "UPDATE bank_details SET profilePic = '$fileName' WHERE email = '$tempEmail'";
+         mysqli_query($connection, $insert_profile_pic);
 
-   
 
-            
-      
+         $query = mysqli_query($connection, $insert_query);
+         echo "<h3 class = 'success-msg'>Information submitted Successfully!</h3>";
+          header("Location: profilePage.php");
+    }
 
+  } 
+
+}    
 
 
 //   $profilePic = $_FILES['image']['tmp_name'];
@@ -112,6 +130,16 @@
   left:50%;
   transform:translateX(-50%);
   
+  }
+
+  .success-msg{
+  text-align:center;  
+  color:green;  
+ position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+
   }
 
 </style>

@@ -1,6 +1,15 @@
 
 <?php
+    
+    session_start();
 
+    $tempEmail = $_SESSION['email'];
+
+   if(isset($tempEmail)){
+  
+      header("Location: bankProfile.php");
+         
+   }
 
 if(isset($_POST['submit'])){
       

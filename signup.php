@@ -2,6 +2,16 @@
 
   // include("php_functions.php");
 
+  session_start();
+
+    $tempEmail = $_SESSION['email'];
+
+   if(isset($tempEmail)){
+  
+      header("Location: bankProfile.php");
+         
+   }
+
 if(isset($_POST['submit'])){
       
 echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
@@ -34,11 +44,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     if(empty($email) && empty($username) && empty($password) && empty($Cpassword)){
    
-      // $generatedAccNo = rand(1111111111,9999999999);
-      //    echo "<h3>$generatedAccNo</h3>";
       echo "<h3>Fields can not be blank!.</h3>";
-
-      
 
     }else if(empty($email) || empty($username)){
       
@@ -62,7 +68,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
        
     }else if(mysqli_num_rows($query1) == true){
 
-           echo "<h3>Already registred with the this email!</h3>";
+           echo "<h3>Already registred with this email!</h3>";
   
     }else if(mysqli_num_rows($query2) == true){
       
@@ -84,20 +90,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
          return;
         
     }
-         
-   //     $generatedAccNo = rand(1111111110,9999999999);
-       
-   //     echo "<h3>$generatedAccNo</h3>";
-   //     $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
-   //     values('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
 
-   //      $query = mysqli_query($connection, $insert_query);
-   //      echo '<script>alert("successfully Created an Account!");</script>';
-
-   //    //   echo "<h3 class='success'>Succesfully Created an Account!</h3>";
-         
-
-   //  }
 }
  ?>
 
@@ -133,10 +126,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
      top: 79%;
      left: 49.2%;
      border-radius:10px;
-     
-
-  
-   
+        
  }
 
 </style>

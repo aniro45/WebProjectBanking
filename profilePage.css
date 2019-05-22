@@ -64,7 +64,7 @@
  
  
  
- .name-col{
+ /* .name-col{
        
        font-size: 35px;
        font-family: Arial;
@@ -72,9 +72,9 @@
       position: absolute;
       top: 126px;
       left: 83px;
- }
+ } */
  
- .head-img{
+ /* .head-img{
     height: 127px;
     width: 127px;
     border-radius: 50%;
@@ -82,7 +82,7 @@
     top: 52px;
     left: 9.5%;
  
- }
+ } */
  
  .logout-btn{
     
