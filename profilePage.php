@@ -144,7 +144,7 @@
              
              <!-- <img class = "head-img" src="aniket_photo.jpg" alt="Avatar"> -->
              <!-- <h6  class="name-col"></h6> -->
-
+             <button class="profilePic-cng-btn">Change Picture</button>
            <div class="list">
               <ul>
                 <li onclick="window.location.href = 'profilePage.php'">PROFILE</li>

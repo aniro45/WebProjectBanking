@@ -164,7 +164,7 @@
         
              <form action="personalInfo.php" method = "POST" enctype="multipart/form-data">
             
-                 <div class= "testDiv">First Name: &nbsp; <input type="text" name="Fname"></div> 
+                 <div class= "testDiv">First Name: &nbsp; <input type="text" name="Fname" ?></div> 
                  <br>
                  <div class= "testDiv">Father Name:<input type="text" name="Mname"></div> 
                  <br>
