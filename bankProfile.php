@@ -53,7 +53,7 @@ if(!isset($_SESSION['email'])){
 
         <div class="list-container">
            <ul class="ulist">
-        	  <li class="header-list-item">HOME</li>
+        	     <li class="header-list-item">HOME</li>
               <li class="header-list-item" onclick="window.location.href='profilePage.php'">PROFILE</li>
               <li class="header-list-item">ABOUT US</li>
               <li class="header-list-item">CONTACT</li>
