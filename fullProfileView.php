@@ -3,6 +3,11 @@
   session_start();
    $tempEmail = $_SESSION['email'];
 
+   if(!isset($tempEmail)){
+     header("Location: signin.php");
+     
+   }
+
    $connection = mysqli_connect("localhost:3307", "root", "", "banking_db") or die("Connection FAILED!");
    $myQuery = mysqli_query($connection, "SELECT * FROM bank_details WHERE email = '$tempEmail'");
        $fetch_myQuery = mysqli_fetch_array($myQuery);
