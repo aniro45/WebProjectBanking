@@ -166,7 +166,7 @@
       <h6 class="info-field-5">Account Number:</h6>
     </div> 
 
-
+      <button class = "view-full-profile-btn" onclick="window.location.href = 'fullProfileView.php'">VIEW PROFILE</button>  
       <button class = "acc-details-btn">CHECK BALANCE DETAILS HERE</button>
 
   </div> 

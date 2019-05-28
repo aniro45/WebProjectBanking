@@ -80,7 +80,7 @@
 
         $isInfoSubmit = 1;
      $insert_query = " UPDATE `bank_details` SET Fname = '$fName', Mname='$mName', Lname= '$lName', mobile='$mobile', 
-     gender = '$gender', city= 'city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
+     gender = '$gender', city= '$city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
        
        move_uploaded_file($fileTmpName, $folder.$fileName);
      $insert_profile_pic = "UPDATE bank_details SET profilePic = '$fileName' WHERE email = '$tempEmail'";

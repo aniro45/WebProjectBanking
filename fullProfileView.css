@@ -3,6 +3,30 @@ body{
     background-color: #D1DFDF;
   
   }
+
+  .edit-btn{
+
+    position: absolute;
+    top:89.4%;
+    left:87.3%;
+    height: 37px;
+    width:88px;
+    border-radius: 20px;
+    background-color: #2863e2;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 17px;
+    border-width: 0px;
+    letter-spacing: 1.5px;
+}
+
+.edit-btn:hover{
+
+    background-color: #1d00fc;
+
+}
+
+
   
   form{
    
@@ -13,7 +37,7 @@ body{
   
   input{
   
-  
+     pointer-events: none;
      height: 25px;
      width: 300px;
      margin-left: 35px; 
@@ -49,7 +73,7 @@ body{
   .radioOption{
   
     position: absolute;
-    top:48.5%;
+     top:48.5%;
      left:9.5%;    
   
   }
@@ -83,7 +107,7 @@ body{
   } */
   
   input[name=pinCode], input[name=age]{
-    
+
     height: 25px;
     width: 150px;
     
@@ -103,7 +127,7 @@ body{
   
   }
   
-  input[type=submit]{
+  /* input[type=submit]{
   
   position: absolute;
   top:86%;
@@ -115,13 +139,38 @@ body{
   cursor: pointer;
   font-weight: 700;
   font-size: 17px;
+  display: none;
+  } */
+
+  .save-btn{
+
+    position: absolute;
+    top:86%;
+    left:85%;
+    height: 37px;
+    width:88px;
+    border-radius: 20px;
+    background-color: #87a8ee;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 17px;
+    display: none;
+    pointer-events: auto;
+    letter-spacing: 1.5px;
+
+  }
+  .save-btn{
+
+    background-color: #5b4adb;
+
   }
   
-  input[type=submit]:hover{
+
+  /* input[type=submit]:hover{
   
     background-color: #1d00fc;
   
-  }
+  } */
   
   input:hover{
   

@@ -1,3 +1,27 @@
+ .view-full-profile-btn{
+
+/* background-color: #d18c17; */
+background-color: #92bbd1;
+position: absolute;
+top:78%;
+left: 59%;
+transform: translate(-50% -50%);
+border-width: 0px;
+height: 50px;
+box-sizing: border-box;
+padding: 10px;
+border-radius: 5px;
+font-weight: bold;
+ }
+
+ .view-full-profile-btn:hover{
+
+
+    background-color:#4eade0;
+  cursor: pointer;
+
+ }
+ 
  .profilePic-cng-btn{
 
    position: absolute;
@@ -175,6 +199,12 @@
      background-color: #7974FF;
      border: 0px;
     border-radius: 25px;
+    }
+
+    .acc-details-btn:hover{
+
+    background-color:#443ee0;
+
     }
  
  

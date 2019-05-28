@@ -56,7 +56,7 @@ if(!isset($_SESSION['email'])){
         	  <li class="header-list-item">HOME</li>
               <li class="header-list-item" onclick="window.location.href='profilePage.php'">PROFILE</li>
               <li class="header-list-item">ABOUT US</li>
-              <li onclick="window.location.href = 'signin.php'"class="header-list-item">CONTACT</li>
+              <li class="header-list-item">CONTACT</li>
            </ul>
         </div>
 
