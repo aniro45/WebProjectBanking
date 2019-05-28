@@ -47,9 +47,8 @@
       .main-head:hover{
 
          position: absolute;
-         text-shadow: 3px 3px white;
+         text-shadow: 1.8px 2.5px white;
          cursor: default;
-         font-family: cursive;
 
        }
 
