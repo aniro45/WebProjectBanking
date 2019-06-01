@@ -1,0 +1,156 @@
+
+.change-pass-container{
+
+    position: absolute;
+    top: 30%;
+    left:45%;
+    transform: translate(-50% -50%);
+
+}
+
+span{
+
+   font-weight: bolder;
+
+}
+
+input[type="password"]{
+
+   height: 30px;
+   width:250px;
+   letter-spacing: 4px;
+   text-align: center;
+   border-radius: 10px;
+   border: 2px solid black;
+}  
+
+input[type="submit"]{
+    position: absolute;
+    top: 110%;
+    left:55%;
+    height:30px;
+    width:100px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 1px 2px black;
+}
+
+
+
+
+ /*---------------------------------------- REMAINING COMPONENT CSS -------------------------------------------------*/
+ .main-layout{
+
+    background-color: rgb(224, 222, 217);
+ 
+  }
+ 
+ 
+ .side-col{
+   
+   display: block;
+   background-color: #E2E2E2;
+    height: 750px;
+    width: 400px;
+    margin-top: -7px;
+    margin-left: -7px;  
+ 
+ }
+ 
+  ul{
+    display: block;
+    text-decoration-style: none;
+    text-align: center;
+    position: absolute;
+    top: 268px;
+    left: -5.2%;
+    
+ }
+ 
+ 
+ li{
+ display: block;
+ text-decoration-style: none;
+ margin-top: 25px;
+ margin-left: 100px;
+ margin-right: 100px;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ padding-left: 100px;
+ padding-right: 100px;
+ list-style: none;
+ cursor: pointer;
+ border-radius: 7px;
+ box-shadow: 1.5px 1px #303a4c;
+ transition-delay: 100ms;
+ }
+ 
+ 
+ 
+   li:hover{
+ 
+    
+    text-align: center;
+    /*vertical-align: center;*/
+    display: block;
+    background-color: #efefef;
+    
+    
+ 
+ }
+ 
+ 
+ 
+ /* .name-col{
+       
+       font-size: 35px;
+       font-family: Arial;
+       font-weight: bold;
+       position: absolute;
+       top: 126px;
+       left: 83px;
+ } */
+ 
+ .head-img{
+    height: 127px;
+    width: 127px;
+    border-radius: 50%;
+    position: absolute;
+    top: 52px;
+    left: 9.5%;
+ 
+ }
+ 
+ 
+  
+        
+        .profilePic-cng-btn{
+       
+          position: absolute;
+            top:20.7%;
+            left:14%;
+       
+        }
+           
+        .logout-btn{
+           
+            cursor: pointer;
+           position: absolute;
+           top: 90%;
+           left: 19.5%;
+           padding:10px 10px 10px 10px;
+           border-radius: 7px;
+           box-shadow: 1.5px 1px black;
+        }
+        
+        .logout-btn:hover{
+        
+          background-color: white;
+        
+        
+        }

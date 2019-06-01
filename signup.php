@@ -4,9 +4,7 @@
 
   session_start();
 
-    $tempEmail = $_SESSION['email'];
-
-   if(isset($tempEmail)){
+   if(isset($_SESSION['email'])){
   
       header("Location: bankProfile.php");
          
@@ -97,13 +95,17 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 <style type="text/css">
 	
  h3{
-
-  color: red;
+    color:white;
   position: absolute;             
    top: 77%;
    left: 48.65%;
    transform: translate(-50%, -50%);
    cursor: default;
+   padding:10px;
+  background-color: red;
+  box-sizing:border-box;
+  border-radius:10px;
+  letter-spacing:1px;
 
  }
 

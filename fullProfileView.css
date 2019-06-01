@@ -4,6 +4,38 @@ body{
   
   }
 
+   .backToProfile-btn{
+
+     color:black;
+     font-size:14px;
+     height: 35px;
+     width: 140px;
+     box-sizing: border-box;
+     box-shadow: 1px 2px grey;
+     border-radius: 20px;
+     border-width: 0px;
+     background-color: #87a8ee;
+     padding: 5px;
+     font-weight: bold;
+     position: absolute;
+     top:89%;
+     left:2%;
+
+   }
+
+  .backToProfile-btn:hover{
+
+    background-color: #5b4adb;
+
+  }
+
+  .backToProfile-btn:active{
+
+    background-color: #ff0000;
+
+  }
+
+
   .edit-btn{
 
     position: absolute;
@@ -12,7 +44,7 @@ body{
     height: 37px;
     width:88px;
     border-radius: 20px;
-    background-color: #2863e2;
+    background-color: #87a8ee;
     cursor: pointer;
     font-weight: 700;
     font-size: 17px;
@@ -22,7 +54,7 @@ body{
 
 .edit-btn:hover{
 
-    background-color: #1d00fc;
+    background-color: #5b4adb;
 
 }
 
@@ -31,7 +63,8 @@ body{
   form{
    
   
-      margin-left:90px;
+      margin-left:200px;
+      position: relative;
   
   }
   
@@ -73,8 +106,8 @@ body{
   .radioOption{
   
     position: absolute;
-     top:48.5%;
-     left:9.5%;    
+     top:52%;
+     left:3%;    
   
   }
   
@@ -113,7 +146,7 @@ body{
     
   }
   
-  input[name=mobile]{
+  input[name=mobile],input[name=city]{
   
    height: 25px;
    width:190px;
@@ -159,7 +192,7 @@ body{
     letter-spacing: 1.5px;
 
   }
-  .save-btn{
+  .save-btn:hover{
 
     background-color: #5b4adb;
 

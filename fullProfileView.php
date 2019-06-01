@@ -23,12 +23,7 @@
        $myAge = $fetch_myQuery['age'];
        $myPincode = $fetch_myQuery['pincode'];
         
-
-       if($myGender == "male"){
-  
-                  
-        
-       }
+      
     
  if(isset($_POST['submit'])) {
     $fName = $_POST['Fname'];
@@ -62,8 +57,8 @@
    if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)|| empty($gender)){
 
      echo "<h3 class = 'warning-msg'>Fileds can Not be Empty!</h3>";
-     
-    
+        
+       
 
    }else if($mobile_string != 10){
           
@@ -71,7 +66,8 @@
              
    }else if(strlen($pincode_string != 6)){
     
-     echo "<h3 class = 'warning-msg'>pincode has to be of 6 characters only!</h3>";       
+     echo "<h3 class = 'warning-m
+     sg'>pincode has to be of 6 characters only!</h3>";       
              
    }else if($age > 99 || $age<10){
 
@@ -81,19 +77,17 @@
    
   //    echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
       
-    else{
+     else{ 
 
-        $isInfoSubmit = 1;
-     $insert_query = " UPDATE `bank_details` SET Fname = '$fName', Mname='$mName', Lname= '$lName', mobile='$mobile', 
-     gender = '$gender', city= '$city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
-       
-       
-
-         $query = mysqli_query($connection, $insert_query);
-         echo "<h3 class = 'success-msg'>Information submitted Successfully!</h3>";
-          header("Location: fullProfileView.php");
+       $isInfoSubmit = 1;
+       $insert_query = " UPDATE `bank_details` SET Fname = '$fName', Mname='$mName', Lname= '$lName', mobile='$mobile', 
+          gender = '$gender', city= '$city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
+         
+       $query = mysqli_query($connection, $insert_query);
+      //  header("Location: fullProfileView.php");
+       echo "<h3 class = 'success-msg'>Information submitted Successfully!</h3>";
+      //  echo "<p class = 'warn-msg'>Please refresh page to see changes</p>";        
     }
-
   } 
 
     
@@ -125,28 +119,53 @@
 
 <script>
 
+     var x = document.querySelector('.success-msg');
+
+    //  x.delay(3200).fadeOut(300);
+
 </script>
 
 <style>
+
+   .warn-msg{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:red;
+    font-size:18px;
+
+   }
   
   .warning-msg{
   text-align:center;  
-  color:red;  
+  color:white;  
  position:absolute;
   bottom:25px;
   left:50%;
   transform:translateX(-50%);
   transform: transition(2s);
-  
+  padding:20px;
+  background-color: red;
+  box-sizing:border-box;
+  border-radius:10px;
+  letter-spacing:1px;
   }
 
   .success-msg{
   text-align:center;  
-  color:green;  
+  color:white;  
  position:absolute;
-  bottom:25px;
+  bottom:10%;
   left:50%;
   transform:translateX(-50%);
+  padding:20px;
+  background-color: green;
+  box-sizing:border-box;
+  border-radius:10px;
+  display:block;
+  font-family:arial;
   }
 
 </style>
@@ -173,14 +192,14 @@
         
              <form action="fullProfileView.php" method = "POST" enctype="multipart/form-data">
             
-                 <div class= "testDiv">First Name: &nbsp; <input type="text" name="Fname" placeholder="<?php echo $myFname; ?>"></div> 
+                 <div class= "testDiv">First Name: &nbsp; <input type="text" name="Fname" value="<?php echo $myFname; ?>"></div> 
                  <br>
-                 <div class= "testDiv">Father Name:<input type="text" name="Mname" placeholder="<?php echo $myMname; ?>"></div> 
+                 <div class= "testDiv">Father Name:<input type="text" name="Mname" value="<?php echo $myMname; ?>"></div> 
                  <br>
-                 <div class= "testDiv">Last Name: &nbsp; <input type="text" name="Lname" placeholder="<?php echo $myLname; ?>"></div>
+                 <div class= "testDiv">Last Name: &nbsp; <input type="text" name="Lname" value="<?php echo $myLname; ?>"></div>
                  <br>
                  <div class= "mobileField">Mobile: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;<input type="number" name="mobile" placeholder="<?php echo $myMobile; ?>"></div> 
+                     &nbsp;&nbsp;&nbsp;<input type="number" name="mobile" value="<?php echo $myMobile; ?>"></div> 
                  <br>
                  <div class= "testDiv">Gender: </div>
                  
@@ -193,13 +212,13 @@
                   </div>
                      <br>
                      <div class= "testDiv">City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="city" placeholder="<?php echo $myCity; ?>"></div>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="city" value="<?php echo $myCity; ?>"></div>
                      <br>
                     <div class= "ageField">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="age" placeholder="<?php echo $myAge; ?>"></div>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="age" value="<?php echo $myAge; ?>"></div>
                      <br>
                       <div class= "pinField">PIN code:&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;<input type="number" name="pinCode" placeholder="<?php echo $myPincode; ?>"></div>
+                     &nbsp;<input type="number" name="pinCode" value="<?php echo $myPincode; ?>"></div>
                   
                      <!-- <div><p class="profile-name">Profle Picture: </p><input type="file" name="image" id="fileToUpload"></div> -->
 
@@ -208,6 +227,7 @@
              </form>
               
              <button class="edit-btn" id="edit-btnx">Edit</button>
+             <button class = "backToProfile-btn" onclick = "window.location.href='profilePage.php'"> << Back To Profile</button>
 
           </div>
      </div>

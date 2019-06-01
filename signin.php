@@ -3,9 +3,10 @@
     
     session_start();
 
-    $tempEmail = $_SESSION['email'];
 
-   if(isset($tempEmail)){
+    // $tempEmail = $_SESSION['email'];
+
+   if(isset($_SESSION['email'])){
   
       header("Location: bankProfile.php");
          
