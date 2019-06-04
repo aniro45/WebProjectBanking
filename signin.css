@@ -79,23 +79,21 @@
 
      }
 
-     input:focus{
+     input[type="password"]:focus{
 
-     	   border-radius: 7px;
-     	   border: 1px solid red;
-     	  height:32px;
-     	  border-radius: 5px;
+     letter-spacing: 4px;
 
      }
+
+     input:focus{
+
+      border-radius: 7px;
+   }
 
      input:hover{
 
         border: 1.5px solid #cc66ff;
-        height:32px;
-
-
-
-
+      
      }
 
      body{
@@ -132,7 +130,8 @@
          height:26px;
      	 width:75px;
      	 border-radius: 2px;
-     	 box-shadow: 1.5px 2.4px black;
+         box-shadow: 1.5px 2.4px black;
+         cursor: pointer;
         }
 
        .submit-btn:hover{

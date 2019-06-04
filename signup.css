@@ -63,7 +63,13 @@
      	height:35px;
      	width:230px;
         padding-left: 8px;
+       letter-spacing: 1px;
 
+     }
+
+     input[type="password"]:focus{
+
+      letter-spacing: 4px;
 
      }
 
@@ -71,7 +77,7 @@
 
      	   border-radius: 7px;
      	   border: 1px solid red;
-     	  height:32px;
+     	  height:35px;
      	  border-radius: 5px;
 
      }
@@ -79,7 +85,7 @@
      input:hover{
 
         border: 1.5px solid #cc66ff;
-        height:32px;
+        height:35px;
 
      }
 
@@ -122,7 +128,7 @@
         }
 
        .submit-btn:hover{
-         
+         color: black;
         margin-left:27%;
          height:26px;
      	 width:75px;
@@ -133,7 +139,7 @@
 
        } 
 
-       .submit-btn:focus{
+       .submit-btn:active{
 
         height:24px;
      	 width:73px;

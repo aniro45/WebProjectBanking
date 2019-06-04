@@ -70,18 +70,24 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
   
    h3{
 
-  color: red;
+  color: white;
   position: absolute;             
    top: 77%;
    left: 48.65%;
    transform: translate(-50%, -50%);
    cursor: default;
+   padding:10px;
+  background-color: red;
+  box-sizing:border-box;
+  border-radius:10px;
+  letter-spacing:1px;
 
  }
 
  h3:hover{
-
-  font-size:30px;
+    color: red;
+   background-color: white;
+  
  }
 
 </style>
@@ -118,6 +124,12 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
   <a class="newAcc" href="signup.php">Create New Account?</a>
 
   </div>
+
+  <script>
+  
+          //  var z = document.getElementsByTagName("INPUT")[1];
+  
+  </script>
 
 </body>
 

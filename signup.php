@@ -97,7 +97,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
  h3{
     color:white;
   position: absolute;             
-   top: 77%;
+   top: 78₹%;
    left: 48.65%;
    transform: translate(-50%, -50%);
    cursor: default;

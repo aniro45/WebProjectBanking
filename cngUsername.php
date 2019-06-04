@@ -26,45 +26,33 @@
           if(isset($_POST['submit'])){
 
        $crnt_pass = $_POST['crntPass'];
-       $new_pass = $_POST['newPass'];
-       $conf_new_pass = $_POST['confNewPass'];
   
       
-      if(empty($crnt_pass) || empty($new_pass) || empty($conf_new_pass) ){
+      if(empty($crnt_pass)){
  
-            echo "<h3 class = 'warning-msg'>Fields Can Not be Empty!</h3>";
-
-      } else if(strlen($new_pass) < 3){
-
-        echo "<h3 class = 'warning-msg'>Password should be at least of 8 charachters!</h3>";
-
-      } else if($new_pass != $conf_new_pass){
-
-        echo "<h3 class = 'warning-msg'>Password does not match!</h3>";
+            echo "<h3 class = 'warning-msg'>Field Can Not be Empty!</h3>";
 
       }else if($pass != $crnt_pass){
 
         echo "<h3 class = 'warning-msg'>Current password does not match with database!</h3>";
 
       } else{
+          
+        echo "<script>alert('Accounnt Deleted Successfully!');</script>";
+        $delete_query = "DELETE FROM `bank_details` WHERE email = '$tempEmail'";
 
-        $update_query = "UPDATE `bank_details` SET pass = '$new_pass' where email = '$tempEmail'";
+        $send_query = mysqli_query($connection, $delete_query);
 
-        $send_query = mysqli_query($connection, $update_query);
+        echo "<h3 class = 'success-msg'>Account deleted Successfully!</h3>";
 
-        echo "<h3 class = 'success-msg'>Password Changed Successfully!</h3>";
+        
+            
+            sleep(3);
+            
+            header("Location: signin.php");
+            session_destroy();
 
       }  
-
-    //   if($new_pass == $conf_new_pass){
-        
-    //       if($pass == $crntf_pass){
-           
-    //            
-          
-    //    } 
-           
-    // }  
 
    } 
           
@@ -84,7 +72,7 @@
 
     position:absolute;
     top:80%;
-    left:66%;
+    left:65%;
     transform:translate(-65%, -65%);
     padding:15px;
     background-color:red;
@@ -97,8 +85,8 @@
 
     position:absolute;
     top:80%;
-    left:67%;
-    transform:translate(-67%, -80%);
+    left:65%;
+    transform:translate(-65%, -80%);
     padding:15px;
     background-color:green;
     border-radius:10px;
@@ -125,12 +113,13 @@
 
 .name-col{
       
-      font-size: 35px;
+      font-size: 40px;
       font-family: Arial;
       font-weight: bold;
 	  position: absolute;
 	  top: 160px;
     left: 85px;
+    color:BLACK;
 } 
 
 
@@ -145,7 +134,7 @@
 
 	<title>State bank of nandurghat</title>
     
-  <link rel="stylesheet" type="text/css" href="changePass.css">
+  <link rel="stylesheet" type="text/css" href="cngUsername.css">
 
   </head>
   <body>
@@ -169,32 +158,38 @@
 
          <p onclick="window.location.href = 'logout.php'"class="logout-btn">LOGOUT</p>
 
+
        <div class="change-pass-container">
           
-             <form action="changePass.php" method = "POST">
+             <form action="deactivateAcc.php" method = "POST">
          
              <span>Current Password:</span> <input class = "crnt-pass-field" type="password" name="crntPass">
              <br>
-             <span>New Password:</span> <input class = "new-pass-field" type="password" name="newPass">
-             <br>
-             <span>Confirm New Password:</span> <input class = "conf-new-pass-field" type="password" name="confNewPass">
-             <br>
-             <input class="submit-btn" type="submit" name="submit" value ="confirm">
+             <input class="submit-btn" type="submit" name="submit" value ="Delete">
   
              </form>
                   
        </div>
 
+       <div class="warning-para-cont">
+            
+            <p class = "warning-para">This Section is very sensitive and can do a Potential Damage to an account. 
+               
+             It is <span class = "para-span">Impossible</span> to recover an account once it is deleted! Please Go back If you are not Sure about this!</p>
+    
+            </div>
+
       </div>
 
      <script>
-      
-  //         document.querySelector('.submit-btn').addEventListener('click', function(){
           
-  //          var z = document.querySelector('.');
-  //            z.style.color = "red";
+//           document.querySelector('.submit-btn').addEventListener('click', function(){
            
-  //  });
+//            if(<?php  $pass ?> == <?php  $crnt_pass ?>){
+          
+//              alert('Account Deleted Successfully!');
+//           }   
+//    });
 
      </script>
 

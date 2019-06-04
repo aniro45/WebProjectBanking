@@ -122,8 +122,8 @@
            <div class = "main-btn-container">
 
                <button class="security-btn-1" onclick="window.location.href = 'changePass.php'">Change Password</button>
-               <button class="security-btn-2">Change Username</button> 
-               <button class="security-btn-3">Deactivate Account</button>   
+               <button class="security-btn-2" >Change Username</button> 
+               <button class="security-btn-3" onclick="window.location.href = 'deactivateAcc.php'">Deactivate Account</button>   
 
 
            </div>
