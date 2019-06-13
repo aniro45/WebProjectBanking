@@ -6,8 +6,8 @@
 
    if(isset($_SESSION['email'])){
   
-      header("Location: bankProfile.php");
-         
+      header("Location: bankProfile.php");        
+   
    }
 
 if(isset($_POST['submit'])){
@@ -19,7 +19,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
    $PASS_DB= "";
    $NAME_DB = "banking_db"; 
 
-   $connection = mysqli_connect($PORT_DB, $USERNAME_DB, $PASS_DB, $NAME_DB) or die("CONNECTION FAILED!");
+    $connection = mysqli_connect($PORT_DB, $USERNAME_DB, $PASS_DB, $NAME_DB) or die("CONNECTION FAILED!");
          
     $email = $_POST['email'];
     $username = $_POST['username'];
@@ -32,12 +32,12 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
     $accCheckQuery = mysqli_query($connection, $select_query);
     $arrayFetchQuery = mysqli_fetch_array($accCheckQuery);
     $AccountNo = $arrayFetchQuery['accountNo']; 
-
-   $select_query1 = "SELECT * FROM bank_details WHERE email = '$email'";
-   $select_query2 = "SELECT * FROM bank_details WHERE username = '$username'";
-  
-   $query1 = mysqli_query($connection, $select_query1);
-   $query2 = mysqli_query($connection, $select_query2);
+    
+    $select_query1 = "SELECT * FROM bank_details WHERE email = '$email'";
+    $select_query2 = "SELECT * FROM bank_details WHERE username = '$username'";
+    
+    $query1 = mysqli_query($connection, $select_query1);
+    $query2 = mysqli_query($connection, $select_query2);
    
 
     if(empty($email) && empty($username) && empty($password) && empty($Cpassword)){
@@ -46,7 +46,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     }else if(empty($email) || empty($username)){
       
-     echo "<h3>Please fill remaining fields first!</h3>";
+      echo "<h3>Please fill remaining fields first!</h3>";
 
     } else if(empty($password) || empty($Cpassword)){
 
@@ -54,35 +54,38 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     }else if($password !== $Cpassword){
 
-    	   echo "<h3>Password Does not match!</h3>";
+    	 echo "<h3>Password Does not match!</h3>";
   
     }else if(strlen($password) < 3){
          
-           echo "<h3>Password Should be greater than 8 Character!</h3>";
+       echo "<h3>Password Should be greater than 8 Character!</h3>";
 
     }else if(strlen($username) <= 2){    
 
-           echo "<h3>Username Should be greter than 5 Character!</h3>";
+       echo "<h3>Username Should be greter than 5 Character!</h3>";
        
     }else if(mysqli_num_rows($query1) == true){
 
-           echo "<h3>Already registred with this email!</h3>";
+       echo "<h3>Already registred with this email!</h3>";
   
     }else if(mysqli_num_rows($query2) == true){
       
-           echo "<h3>Username is alredy registered!</h3>";
+       echo "<h3>Username is alredy registered!</h3>";
 
     }else if($generatedAccNo !== $AccountNo ){
+          
+       $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
+       VALUES('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
 
-      $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
-       values('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
+       $insert_query1 = "INSERT INTO `row_bank_data`(`id`, `email`, `uNameAttempts`, date) VALUES ('','$email', 1, NOW() )";
      
-    
        $query = mysqli_query($connection, $insert_query);
-        
+       $query1 = mysqli_query($connection, $insert_query1);
+
         echo '<script>alert("successfully Created an Account!");</script>';
         echo "<h3 class='success'>Succesfully Created an Account!</h3>";
    
+
       }else{ 
          
          return;
@@ -92,12 +95,12 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 }
  ?>
 
-<style type="text/css">
+<style>
 	
  h3{
     color:white;
   position: absolute;             
-   top: 78₹%;
+   top: 80%;
    left: 48.65%;
    transform: translate(-50%, -50%);
    cursor: default;

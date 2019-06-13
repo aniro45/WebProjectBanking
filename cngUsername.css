@@ -1,16 +1,51 @@
 
+   .uName-pass-container{
+
+     position: absolute;
+     top: 30%;
+     left:60%;
+    transform: translateX(-35%);
+     background-color: rgb(224, 224, 224);
+     height: 220px;
+     width: 450px;
+     padding-top: 30px;
+     box-sizing: content-box;
+     padding-bottom: 30px;
+     border-radius: 10px; 
+
+   }
+   
+   .username-field{
+
+    height: 30px;
+    width:250px;
+    letter-spacing: 4px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 60px;
+    background-color: rgb(240, 241, 243);
+
+   }
+ 
+   .username-field:hover{
+
+    border: 1px solid rgb(243, 111, 199);
+  
+
+   }
+    
+
   .warning-para-cont{
 
     position: absolute;
     top:7%;
-    left:48%;
+    left:50%;
     height:80px;
     width: 400px;
     letter-spacing: 1px;
     padding: 10px;
     
-
-
      }
 
      .warning-para{
@@ -29,14 +64,7 @@
     }
   
   
-  .change-pass-container{
-  
-      position: absolute;
-      top: 30%;
-      left:45%;
-      transform: translate(-50% -50%);
-     text-align: center
-  }
+
   
   span{
   
@@ -56,7 +84,7 @@
 
   
   input[type="password"]{
-  
+    
      height: 30px;
      width:250px;
      letter-spacing: 4px;
@@ -73,10 +101,11 @@
      border: 1px solid rgb(243, 111, 199);
   
   }
+
   input[type="submit"]{
       position: absolute;
-      top: 90%;
-      left:55%;
+      top: 80%;
+      left:40%;
       height:30px;
       width:100px;
       font-size: 18px;
@@ -84,14 +113,14 @@
       border: 1px solid black;
       cursor: pointer;
       background-color: white;
-      color: red;
+      color: green;
       box-sizing: border-box;
       box-shadow: 1px 2px black;
   }
   
     input[type="submit"]:hover{
   
-     background-color: red;
+     background-color: green;
      color: white;
     }
   
@@ -99,7 +128,7 @@
    /*---------------------------------------- REMAINING COMPONENT CSS -------------------------------------------------*/
    .main-layout{
   
-      background-color: rgb(255, 146, 146);
+      background-color: tan;
    
     }
    

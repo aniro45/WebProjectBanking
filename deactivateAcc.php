@@ -40,17 +40,17 @@
           
         echo "<script>alert('Accounnt Deleted Successfully!');</script>";
         $delete_query = "DELETE FROM `bank_details` WHERE email = '$tempEmail'";
+        $delete_query1 = "DELETE FROM row_bank_data WHERE email = '$tempEmail'";
 
         $send_query = mysqli_query($connection, $delete_query);
+        $send_query1 = mysqli_query($connection, $delete_query1);
 
         echo "<h3 class = 'success-msg'>Account deleted Successfully!</h3>";
 
-        
-            
-            sleep(3);
-            
-            header("Location: signin.php");
+            sleep(2);
             session_destroy();
+            header("Location: signin.php");
+            
 
       }  
 
@@ -166,7 +166,7 @@
              <span>Current Password:</span> <input class = "crnt-pass-field" type="password" name="crntPass">
              <br>
              <input class="submit-btn" type="submit" name="submit" value ="Delete">
-  
+              
              </form>
                   
        </div>

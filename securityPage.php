@@ -23,8 +23,8 @@
   
           echo "<p class = 'name-col'>$fName $lName</p>";
           echo "<img class = 'head-img' src='upload_images/".$data['profilePic']."' onclick='window.location = \".php\"'/>";         
-
      
+          
 ?>
 
 <script>
@@ -84,12 +84,12 @@
              <!-- <h6  class="name-col"></h6> -->
              <button class="profilePic-cng-btn">Change Picture</button>
            <div class="list">
-              <ul>
-                <li onclick="window.location.href = 'profilePage.php'">PROFILE</li>
+             <ul>
+                <li onclick = "window.location.href = 'profilePage.php'">PROFILE</li>
                 <li onclick = "window.location.href = 'settingPage.php'">STTINGS</li>
                 <li onclick = "window.location.href = 'securityPage.php'">SECURITY</li>
-                <li onclick="window.location.href = 'bankHome.php'">HOME</li>
-              </ul>
+                <li onclick = "window.location.href = 'bankHome.php'">HOME</li>
+             </ul>
            </div>
 
          <p onclick="window.location.href = 'logout.php'"class="logout-btn">LOGOUT</p>
@@ -122,9 +122,8 @@
            <div class = "main-btn-container">
 
                <button class="security-btn-1" onclick="window.location.href = 'changePass.php'">Change Password</button>
-               <button class="security-btn-2" >Change Username</button> 
+               <button class="security-btn-2" onclick="window.location.href = 'cngUsername.php'">Change Username</button> 
                <button class="security-btn-3" onclick="window.location.href = 'deactivateAcc.php'">Deactivate Account</button>   
-
 
            </div>
   </div> 
