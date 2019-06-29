@@ -12,8 +12,10 @@
    $myQuery = mysqli_query($connection, "SELECT * FROM bank_details WHERE email = '$tempEmail'");
        $fetch_myQuery = mysqli_fetch_array($myQuery);
        $activation_key = $fetch_myQuery['isInfoSubmit'];
-       
-       
+
+
+  
+
        $myFname = $fetch_myQuery['Fname'];
        $myMname = $fetch_myQuery['Mname'];
        $myLname = $fetch_myQuery['Lname'];
@@ -24,7 +26,6 @@
        $myPincode = $fetch_myQuery['pincode'];
         
       
-    
  if(isset($_POST['submit'])) {
     $fName = $_POST['Fname'];
     $mName = $_POST['Mname'];
@@ -53,13 +54,11 @@
      $query_mobile = mysqli_query($connection, $mobile_check_query);
       
           
-            
    if(empty($fName)||empty($mName)||empty($lName)||empty($mobile)||empty($city)||empty($age)||empty($pincode)|| empty($gender)){
 
      echo "<h3 class = 'warning-msg'>Fileds can Not be Empty!</h3>";
-        
-       
 
+     
    }else if($mobile_string != 10){
           
      echo "<h3 class = 'warning-msg'>Recheck your phone number!</h3>";
@@ -69,31 +68,34 @@
      echo "<h3 class = 'warning-m
      sg'>pincode has to be of 6 characters only!</h3>";       
              
-   }else if($age > 99 || $age<10){
+   }else if($age > 99){
 
      echo "<h3 class = 'warning-msg'>Are you the Captain America?</h3>";
-   }        
+   }else if($age < 0){
+
+    echo "<h3 class = 'warning-msg'>Age can not be negative!</h3>";
+
+   }
   //   }else if($query_mobile || mysqli_num_rows($query_mobile) == false){
    
   //    echo "<h3 class = 'warning-msg'>This phone number is already used in the database!</h3>";
       
      else{ 
 
+
        $isInfoSubmit = 1;
        $insert_query = " UPDATE `bank_details` SET Fname = '$fName', Mname='$mName', Lname= '$lName', mobile='$mobile', 
           gender = '$gender', city= '$city', age='$age', pincode='$pincode', isInfoSubmit = $isInfoSubmit WHERE email ='$tempEmail' ";
-         
+    
        $query = mysqli_query($connection, $insert_query);
       //  header("Location: fullProfileView.php");
        echo "<h3 class = 'success-msg'>Information submitted Successfully!</h3>";
-      //  echo "<p class = 'warn-msg'>Please refresh page to see changes</p>";        
+      //  echo "<p class = 'warn-msg'>Please refresh page to see changes</p>";    
+          
     }
   } 
 
     
-       
-
-
 //   $profilePic = $_FILES['image']['tmp_name'];
 
 // $connection = mysqli_connect("localhost:3307", "root", "", "banking_db");
@@ -239,8 +241,14 @@
               // z.style.pointerEvents = "none";                  
 
            document.querySelector('.edit-btn').addEventListener('click', function(){
-
               
+              
+              // if(documnet.querySlector('.edit-btn').innerHTML = "Edit"){
+
+                 
+
+                       
+              // }
             var x = document.querySelector('.edit-btn');
              x.style.color = "red";
 

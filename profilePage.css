@@ -1,3 +1,9 @@
+ body{
+
+  background-color: black;
+
+ }
+ 
  .view-full-profile-btn{
 
 /* background-color: #d18c17; */
@@ -12,10 +18,10 @@ box-sizing: border-box;
 padding: 10px;
 border-radius: 5px;
 font-weight: bold;
+transition: 400ms;
  }
 
  .view-full-profile-btn:hover{
-
 
     background-color:#4eade0;
   cursor: pointer;
@@ -68,6 +74,7 @@ font-weight: bold;
  cursor: pointer;
  border-radius: 7px;
  box-shadow: 1.5px 1px #303a4c;
+ transition: 400ms;
  
  }
  
@@ -124,6 +131,7 @@ font-weight: bold;
     padding:10px 10px 10px 10px;
     border-radius: 7px;
     box-shadow: 1.5px 1px black;
+    transition: 400ms;
  }
  
  .logout-btn:hover{
@@ -142,6 +150,7 @@ font-weight: bold;
   /* padding-top: 50px;
   padding-bottom: 50px; */
   font-size: 15px;
+  color: white;
  
  }
  
@@ -153,6 +162,7 @@ font-weight: bold;
      /* padding-top: 50px;
   padding-bottom: 50px; */
   font-size: 15px;
+  color: white;
      
     }
  
@@ -164,6 +174,7 @@ font-weight: bold;
      /* padding-top: 50px;
      padding-bottom: 50px; */
      font-size: 15px;
+     color: white;
     }
  
     .info-field-4{
@@ -174,6 +185,7 @@ font-weight: bold;
      /* padding-top: 50px;
      padding-bottom: 50px; */
      font-size: 15px;
+     color: white;
  
      
     }
@@ -186,6 +198,7 @@ font-weight: bold;
      /* padding-top: 50px;
      padding-bottom: 50px; */
      font-size: 15px;
+     color: white;
      
     }
  
@@ -199,11 +212,13 @@ font-weight: bold;
      background-color: #7974FF;
      border: 0px;
     border-radius: 25px;
+
     }
 
     .acc-details-btn:hover{
 
     background-color:#443ee0;
+    
 
     }
  

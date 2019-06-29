@@ -1,0 +1,95 @@
+
+body{
+
+   background-color: aquamarine;
+
+}
+
+
+
+.balance-container{
+
+      background-color: wheat;
+     height: 17%;
+     width: 17%;
+     position: absolute;
+     top:20%;
+     left:50%;
+     transform: translate(-50%, -50%);
+     border-radius: 7px;
+     box-shadow: 3px 3px rgb(189, 187, 187);
+}
+
+ 
+.check-bal-heading{
+
+     position: absolute;
+     top:30%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+     letter-spacing: 1px;
+     color: rgb(98, 98, 219);
+     width:90%;
+     cursor: pointer;
+     text-decoration: underline;
+
+}
+
+.check-bal-heading:hover{
+
+      color: rgb(6, 64, 255);
+      text-decoration-color: rgb(226, 78, 98);
+
+}
+
+.balance-amount-header{
+
+     position: absolute;
+     top:50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+     letter-spacing: 4px;
+     color: rgb(0, 0, 0);
+     width:90%;
+     cursor: default;
+      
+
+}
+
+.table-container{
+
+     position: absolute;
+     top: 62%; 
+     left:50%;
+     transform: translate(-50%,-50%);
+
+
+}
+
+table, th, td{
+
+    border: 1px solid black;
+
+}
+
+th, td{
+
+  padding-top:25px;
+  padding-bottom: 25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+
+}
+
+.rupeeSymbolSpan{
+
+  color: red;
+  font-size: 20px;
+position: relative;
+top: 1px;
+}
+
+

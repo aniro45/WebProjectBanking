@@ -35,18 +35,17 @@
 	padding-bottom: 7px;
 	padding-left: 13px;
 	padding-right: 13px;
-    cursor: pointer;
-    background-color: #e6fffa;
-    border-radius: 10px;
-    border-radius: 6px;
+  cursor: pointer;
+    /* background-color: #e6fffa; */
+   transition: 400ms;
 
    }
 
 
  .header-list-item:hover{
 
-   background-color: #eaeae1;
-   border-radius: 20px;
+   background-color: #a0f9ff;
+   border-radius: 5px;
   
  }
 
@@ -70,6 +69,7 @@
     background-color: #97BAEE;
     border-width: 0px;
     border-radius: 5px;
+    transition: 400ms
 
   }
 
@@ -78,7 +78,7 @@
      background-color: #5c5cd6;
    }
 
-   .logout-btn:focus{
+   .logout-btn:active{
 
     background-color: red;
 

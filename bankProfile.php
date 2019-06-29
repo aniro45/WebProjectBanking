@@ -12,7 +12,7 @@ if(!isset($_SESSION['email'])){
 }else{
 
   
-  echo "<h3>welcome". " " . $_SESSION['email'] . " " . "to the SBN Bank!</h3>";
+  echo "<h3>welcome". " ". "<span>" . $_SESSION['email'] . "</span>" . " " . "to the SBN Bank!</h3>";
 
 }
 
@@ -22,11 +22,21 @@ if(!isset($_SESSION['email'])){
 
   h3{
     
-    color: red;
+   color: red;
   	position: absolute;
   	top:0.2%;
-  	left:34%;
-  } 	
+  	left:50%;
+   transform:translateX(-50%);
+   padding:10px;
+   background-color:black;
+   border-radius:25px;
+   transition:0.4s;
+  } 
+
+  h3:hover{
+   color: black;
+   background-color:#ec3c3c;
+  }
    
 
  </style>
@@ -53,13 +63,13 @@ if(!isset($_SESSION['email'])){
 
         <div class="list-container">
            <ul class="ulist">
-        	     <li class="header-list-item">HOME</li>
+        	     <li class="header-list-item" onclick="window.location.href='bankProfile.php'">HOME</li>
               <li class="header-list-item" onclick="window.location.href='profilePage.php'">PROFILE</li>
               <li class="header-list-item">ABOUT US</li>
-              <li class="header-list-item">CONTACT</li>
+              <li class="header-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li>
            </ul>
         </div>
-
+ 
         <button class ="logout-btn" onclick="window.location.href = 'logout.php'">LOGOUT</button>
     </div>
 
@@ -83,8 +93,8 @@ if(!isset($_SESSION['email'])){
       <div class="footer-list">
            <ul class="footer-ulist">
               <li class="footer-list-item">ABOUT US</li>
-              <li class="footer-list-item">CONTACT</li> 
-              <li class="footer-list-item">FEEDBACK</li>
+              <li class="footer-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li> 
+              <li class="footer-list-item" onclick="window.location.href='contactUs.php'">FEEDBACK</li>
            </ul>
       </div>
 

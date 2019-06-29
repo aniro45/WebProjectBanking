@@ -58,6 +58,8 @@
     top: 52px;
     left: 9.5%;
     cursor:pointer;
+
+
  }
 
    .head-img:hover{
@@ -73,32 +75,48 @@
 	  position: absolute;
 	  top: 160px;
     left: 85px;
+
 }   
   
 .test1{
 
   color:red;
   position:absolute;
-  top: 22.4%;
+  top: 22%;
   left: 44%;
-
+  padding:8px;
+  background-color:white;
+  font-weight:600;
+  border-radius:10px;
+  transition: 0.3s;
+  
+   
 }
 
 .test2{
 
   color:red;
   position:absolute;
-  top: 7.4%;
+  top: 7%;
   left: 45%;
-
+  padding:8px;
+  background-color:white;
+  font-weight:600;
+  border-radius:10px;
+  transition: 0.3s;
 }
 
 .test3{
 
   color:red;
   position:absolute;
-  top: 508.5px;
+  top: 507px;
   left: 48.3%; 
+  padding:8px;
+  background-color:white;
+  font-weight:600;
+  border-radius:10px;
+  transition: 0.3s;
 
 }
 
@@ -106,8 +124,13 @@
 
   color:red;
   position:absolute;
-  top: 52.6%;
+  top: 51.7%;
   left: 46%;
+  padding:8px;
+  background-color:white;
+  font-weight:600;
+  border-radius:10px;
+  transition: 0.3s;
 
 }
 
@@ -115,8 +138,20 @@
 
   color:red;
   position:absolute;
-  top: 37.5%;
+  top: 36.3%;
   left: 44%;
+  padding:8px;
+  background-color:white;
+  font-weight:600;
+  border-radius:10px;
+  transition: 0.3s;
+
+}
+
+.test1:hover, .test2:hover, .test3:hover, .test4:hover, .test5:hover{
+
+background-color:red;
+color:white;
 
 
 }
@@ -167,7 +202,7 @@
     </div> 
 
       <button class = "view-full-profile-btn" onclick="window.location.href = 'fullProfileView.php'">VIEW PROFILE</button>  
-      <button class = "acc-details-btn">CHECK BALANCE DETAILS HERE</button>
+      <button class = "acc-details-btn" onclick="window.location.href = 'bankDetailsPage.php'">CHECK BALANCE DETAILS HERE</button>
 
   </div> 
         

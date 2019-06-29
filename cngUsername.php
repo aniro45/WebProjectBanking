@@ -42,7 +42,7 @@
        $crnt_pass = $_POST['crntPass'];
        $new_username = $_POST['new-username'];
        
-       $check_query = "SELECT * FROM bank_details WHERE username = '$new_username' and email = '$tempEmail'";
+       $check_query = "SELECT * FROM bank_details WHERE";
        $send_check_query = mysqli_query($connection, $check_query);
 
       if(empty($crnt_pass) || empty($new_username)){

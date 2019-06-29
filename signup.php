@@ -26,6 +26,7 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
     $password = $_POST['pass'];
     $Cpassword = $_POST['cpass'];
     $generatedAccNo = rand(11111111111,99999999999);
+    $generateBalance = rand(65540,245590);
     
 
     $select_query = "SELECT * FROM bank_details";
@@ -74,8 +75,8 @@ echo '<link rel="shortcut icon" href="faviconBank.png" type="image/x-icon"/>';
 
     }else if($generatedAccNo !== $AccountNo ){
           
-       $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, date) 
-       VALUES('', '$email', '$username', '$password', '$generatedAccNo', NOW() )";
+       $insert_query = "INSERT INTO bank_details (id, email, username, pass, accountNo, balance, date) 
+       VALUES('', '$email', '$username', '$password', '$generatedAccNo', '$generateBalance', NOW() )";
 
        $insert_query1 = "INSERT INTO `row_bank_data`(`id`, `email`, `uNameAttempts`, date) VALUES ('','$email', 1, NOW() )";
      
