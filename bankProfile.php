@@ -20,10 +20,11 @@ if(!isset($_SESSION['email'])){
 
  <style>
 
+
   h3{
     
    color: red;
-  	position: absolute;
+  	position: fixed;
   	top:0.2%;
   	left:50%;
    transform:translateX(-50%);
@@ -31,6 +32,7 @@ if(!isset($_SESSION['email'])){
    background-color:black;
    border-radius:25px;
    transition:0.4s;
+   z-index:15;
   } 
 
   h3:hover{
@@ -65,7 +67,7 @@ if(!isset($_SESSION['email'])){
            <ul class="ulist">
         	     <li class="header-list-item" onclick="window.location.href='bankProfile.php'">HOME</li>
               <li class="header-list-item" onclick="window.location.href='profilePage.php'">PROFILE</li>
-              <li class="header-list-item">ABOUT US</li>
+              <li class="header-list-item" onclick="window.location.href='aboutUs.html'">ABOUT US</li>
               <li class="header-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li>
            </ul>
         </div>
@@ -92,7 +94,7 @@ if(!isset($_SESSION['email'])){
 
       <div class="footer-list">
            <ul class="footer-ulist">
-              <li class="footer-list-item">ABOUT US</li>
+              <li class="footer-list-item" onclick="window.location.href='aboutUs.html'">ABOUT US</li>
               <li class="footer-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li> 
               <li class="footer-list-item" onclick="window.location.href='contactUs.php'">FEEDBACK</li>
            </ul>

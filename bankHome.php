@@ -56,7 +56,7 @@
 
       <div class="footer-list">
            <ul class="footer-ulist">
-              <li class="footer-list-item">ABOUT US</li>
+              <li class="footer-list-item" onclick="window.location.href='aboutUs.html'">ABOUT US</li>
               <li class="footer-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li> 
               <li class="footer-list-item" onclick="window.location.href='contactUs.php'">FEEDBACK</li>
            </ul>

@@ -69,7 +69,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "stylesheet" type = "text/css" href="contactUs.css">
+    <link rel = "stylesheet" type = "text/css" href="aboutUs.css">
     <title>Contact Us</title>
 </head>
 <body>
@@ -85,7 +85,7 @@
                                    <li class="header-list-item" onclick="window.location.href='bankProfile.php'">HOME</li>
                               <li class="header-list-item" onclick="window.location.href='profilePage.php'">PROFILE</li>
                               <li class="header-list-item" onclick="window.location.href='aboutUs.html'">ABOUT US</li>
-                              <li class="header-list-item" onclick="window.location.href='contactUs.html'">CONTACT</li>
+                              <li class="header-list-item" onclick="window.location.href='contactUs.php'">CONTACT</li>
                            </ul>
                         </div>
                     </div>
@@ -95,59 +95,31 @@
 
             <ul class = "contact-list-container">
 
-                 <li class= "top-name">NAME: <span class= "address-span"></span></li>
+                 <li class= "top-name">ADDRESS: <span class= "address-span">ANIKET JADHAV</span></li>
                  <br>
-                 <li>WEBSITES : <span>statebanknandurghat.com</span></li>
+                 <li>Website : <span>statebanknandurghat.com</span></li>
                  <br>
                  <li>CONTACT : <span>9860797374</span></li>
                  <br>
                  <li>EMAIL : <span>aniket.jadhav.8151@gmail.com</span></li>
                  
-
             </ul>
 
       </div>
 
-          <div class = "feedback-form">
-                  <label class="feedback-head">FEEDBACK</label>                
-              <form action = "contactUS.php" method="POST">
-                        <label>Name *</label>
-                        <br>
-                        <input type="text" name = "feedback-name">.
-                        <br>
-                        <label>Your Email *</label>
-                        <br>
-                        <input type="email" name = "feedback-email">
-                        <br>
-                        <label>Subject</label>
-                        <br>
-                        <input type="text" name = "feedback-subject">
-                        <br>
-                        <label>Your Message *</label>
-                        <br>
-                        <textarea rows="4" coloum="5" name="feedback-msg"></textarea>
-                        <br>
-                       <input type = "submit" name="submit" value="submit"> 
+      <div class="middle-container">
 
-                       <label><?php 
-                        if(isset($isGetSuccess)){
-                              
-                              if($isGetSuccess == true){
-                                  echo "<h3 class = 'success-msg'>Query Sent Successfully!</h3>";     
-                              }else{
+         <h3 class= "our-mission-heading">OUR MISSSION</h3>
 
-                                  echo "<h3 class = 'warning-msg'>Fields can not be Emptey!</h3>";
+         <p>
 
-                             }
-                        } 
-                         ?>
-                      </label>
-                       
 
-              </form>
+            
+         </p>
 
-          </div>
-      
+      </div>
+
+        
    
       <div class = "footer">
     
